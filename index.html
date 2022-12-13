@@ -1,0 +1,163 @@
+ 
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leap Year Program</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                /* overflow: hidden; */
+            }
+            ::selection{
+                background-color: bisque;
+                color: black;
+                padding: 5px;
+            }
+            #container{
+                height: 100vh;
+                width: 100%;
+                background:linear-gradient(to right,rgb(13, 32, 108),rgba(79, 9, 81));
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                
+            }
+
+            .all{
+                background-color: #fff;
+                border-radius: 15px;
+                padding: 20px;
+                
+            }
+            h1{
+                color: rgb(15, 31, 88);
+                font-size: 2.8rem; 
+                margin-bottom: 20px;  
+              }
+
+            p{
+                font-size: 18px;
+            }
+
+            input{
+                margin-top: 20px;
+                width: 20rem;
+                height: 2.8rem;
+                border-radius: 30px;
+                padding: 0 10px;
+                font-size: 18px;
+                border: none;
+                background-color: rgb(175, 175, 175);
+                color: black;
+            }
+
+            input:focus{
+                outline: none;
+                
+            }
+
+            button{
+                width: 10rem;
+                height: 2.5rem;
+                background-color: rgb(19, 204, 225);
+                color: rgb(0, 0, 0);
+                font-size: 17px;
+                font-weight: 500;
+                border:none;
+                border-radius: 5px;
+                text-align: center;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+
+
+            button:hover{
+                background-color: rgb(23, 181, 181);
+            }
+
+
+            #result{
+                background-color: rgb(170, 255, 170);
+                padding: 15px;
+                border-radius: 10px;
+                height: 3.5rem;
+                color: rgb(216, 34, 34);
+                font-weight: 600;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            @media (max-width:500px){
+                .all{
+                    width: 300px;
+                }
+
+                input{
+                    width: 15rem;
+                }
+                #result{
+                    padding: 10px  5px;
+                }
+            }
+
+            @media (max-width:350px){
+                .all{
+                    width: 250px;
+                }
+
+                input{
+                    width: 12rem;
+                }
+                button{
+                    width: 8rem;
+                    height: 2.4rem;
+                    font-size: 15px;
+                }
+            }
+
+        </style>
+    </head>
+    
+    <body>
+    
+        <div id="container">
+            <div class="all">
+            <h1>Leap Year Program</h1>
+            <p>Enter a year to find out if it is a leap year:</p>
+            <input type="number" id="year" placeholder="Enter year here...">
+            <br><br>
+            <button onclick="checkLeapYear()">Check Leap Year</button>
+            <br>
+            <p id="result"></p>
+        </div>
+        </div>
+        <script type="text/javascript">
+            function checkLeapYear() {
+                var year = document.getElementById("year").value;
+                var cheak = [0,1,2,3,4,5,6,7,8,9]
+                if(year == ""){
+                     alert("please enter the year")
+                }
+                
+                else if (year % 4 == 0) {
+                    document.getElementById("result").innerHTML = year + " is a (Leap year.) Happy Birthday Leapers.";
+                    // document.getElementById("result").style.color = "rgb(170, 255, 170)";
+                    // document.getElementById("result").style.background ="rgb(170, 255, 170)";
+                }
+                else {
+                    document.getElementById("result").innerHTML = year + " is (Not a Leap year.) Sorry Leapers.";
+                }
+            }
+        </script>
+    </body>
+    
+    </html>
